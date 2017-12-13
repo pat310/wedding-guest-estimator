@@ -3,7 +3,7 @@ close all;
 clc;
 
 % number of simulations
-n = 1000;
+n = 10000;
 
 % load guest list with associated probabilities of attendance
 data = csvread('guestList.csv');
@@ -29,7 +29,7 @@ end
 summed_simulations = sum(guest_attending, 2);
 
 % group simulation counts into bins (i.e. how many times each count happens)
-[nn, xx] = hist(summed_simulations);
+[nn, xx] = hist(summed_simulations, 20);
 
 figure(2);
 bar(xx, nn ./ n);
