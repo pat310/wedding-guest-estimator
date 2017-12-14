@@ -13,7 +13,7 @@ X = data(:, 3);
 figure(1);
 hist(X, 20);
 xlabel('Probability');
-ylabel('Number of guests');
+ylabel('Number of people in category');
 
 % number of guests
 num_guests = length(X);
@@ -33,5 +33,8 @@ summed_simulations = sum(guest_attending, 2);
 
 figure(2);
 bar(xx, nn ./ n);
-xlabel('Attendees');
+xlabel('# of Attendees');
 ylabel('Probability')
+
+mean(xx)
+quantile(xx, 0:0.1:1)
